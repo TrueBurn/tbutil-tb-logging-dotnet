@@ -70,27 +70,26 @@ container.Resolve<ICustomLogger>().Verbose("Calling Trace from main");
 ```
 
 ## 2. Global static logging
-Set up the static logging once and then everywhere you call CustomLogger.___ will output accordingly. The logging library provides a global static handle CustomLogger.___ to access from anywhere within your project, but require the setup below first.
+Set up the static logging once and then everywhere you call CLogger.___ will output accordingly. The logging library provides a global static handle CustomLogger.___ to access from anywhere within your project, but require the setup below first.
 
 ### Setup for ```DebugConsole``` output
 If you want to use global logging with colored output for debugging, then follow this setup below 
 ```
-CustomLogger.SetupDebugConsole(EntityType.API, "MotherShipApp", LogLevel.Verbose);
-CustomLogger.Verbose("Calling Trace from main");
-```
+CLogger.SetupDebugConsole(EntityType.API, "MotherShipApp", LogLevel.Verbose);
+CLogger```
 
 ### Setup for ```Console``` output
 If you want to use global logging with JSON output for debugging (perfect for containers), then follow this setup below 
 ```
-CustomLogger.SetupConsole(EntityType.API, "MotherShipApp", LogLevel.Verbose);
-CustomLogger.Verbose("Calling Trace from main");
+CLogger.SetupConsole(EntityType.API, "MotherShipApp", LogLevel.Verbose);
+CLogger.Verbose("Calling Trace from main");
 ```
 
 ### Setup for ```File``` output
 If you want to use global logging with JSON output for debugging (perfect for containers), then follow this setup below 
 ```
-CustomLogger.SetupFile(EntityType.Service, "MotherShipApp", @"c:\Logs\ConsoleTestApp-.log", LogLevel.Verbose);
-CustomLogger.Verbose("Calling Trace from main");
+CLogger.SetupFile(EntityType.Service, "MotherShipApp", @"c:\Logs\ConsoleTestApp-.log", LogLevel.Verbose);
+CLogger.Verbose("Calling Trace from main");
 ```
 
 ## 3. Factory creating a logging instance
